@@ -8,7 +8,8 @@ import { CustomClient } from "../core/CustomClient";
 type CommandData =
     | SlashCommandBuilder
     | SlashCommandOptionsOnlyBuilder
-    | ContextMenuCommandBuilder;
+    | ContextMenuCommandBuilder
+    | SlashCommandSubcommandsOnlyBuilder;
 
 type InteractionType =
     | ChatInputCommandInteraction

@@ -49,8 +49,17 @@ export class Handler {
                     continue;
                 }
 
+                const commandData = command.data.toJSON();
+                const subCommands = commandData.options?.filter((opt: ) => opt.type === 1 || opt.type === 2);
+
+                if (subCommands && subCommands.length > 0) {
+                    const subNames = subCommands.map(s => s.name).join(', ');
+                    Logger.info("Handler", `Command loaded: ${command.data.name} ${subNames}`)
+                } else {
+                    Logger.info("Handler", `Command loaded: ${command.data.name}`);
+                }
+
                 this.client.commands.set(command.data.name, command);
-                Logger.info("Handler", `Command loaded: ${command.data.name}`);
             } catch (err) {
                 Logger.error("Handler", `Error loading command ${file}`);
                 Logger.error("Handler", `${err}`, true);
