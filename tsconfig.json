@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",               /* Version moderne de JS supportée par Node */
+        "module": "CommonJS",             /* Standard actuel pour Node.js */
+        "lib": ["ES2020"],
+        "outDir": "./dist",               /* Le code compilé ira ici */
+        "rootDir": "./src",               /* Ton code source sera ici */
+        "strict": true,                   /* Active la vérification stricte des types (sécurité maximale) */
+        "esModuleInterop": true,          /* Permet d'importer des modules CommonJS via 'import' */
+        "skipLibCheck": true,             /* Accélère la compilation */
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true         /* Permet d'importer des fichiers .json */
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
